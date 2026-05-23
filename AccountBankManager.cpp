@@ -1,5 +1,5 @@
-/*Cose da cambiare:
-1-- dividere le classi in file diversi per rendere il codice piu organizzato
+/*Cose da cambiare
+1-- dividere le classi in file diversi per rendere il codice piu organizzato(verso la fine)
 2-- prima di creare tutta la UI migliorare la grafica da terminale rimediando alla continua ripetizione del menu che porta a rendere il programma un po più confusionario,
 3-- migliorare la UI delle risposte dei case tipo del bilancio, trasferimento, ritiro e altro, magari renderli un po più visibili/notabili e meno nascosti dal menu
 4-- quando chiede di depositare il denaro questo viene depositato senza alcuna traccia della provenienza, rimediare magari con l'aggiunta di un modo per guadagnare 
@@ -7,6 +7,12 @@ denaro, per esempio con la compravendita di azioni e criptovalute
 5-- ERRORE -> case 6 -> quando avviene il login in un account non avviene la verifica del caso dove l'utente puo inserire le stesse credenziali(PIN e ACCNumber), magari è meglio fare
 come nel case 4 (Transfer) dove se viene messo lo stesso ACCNumber di quello che l'utente utilizza il programma si 'ferma' e dice all'utente che non è possibile compiere quell'azione e
 ritorna al menu {{{RISOLTO}}}
+*/
+
+
+/* -> si utilizza per accedere a variabili e/o funzioni dell'oggetto puntato, si usa in pointers o in smart pointers
+acc->accountNumber → accedi al dato
+fromAcc->withdraw() → chiamo il metodo
 */
 #include <iostream>
 #include <string>
@@ -52,7 +58,10 @@ public:
 
 class Bank {
 private:
-    std::vector<std::unique_ptr<Account>> accounts;
+    //smart pointer, utilizzo std:: sempre per la questione di using namespace std; come contenitore 
+    std::vector<std::unique_ptr<Account>> accounts;/*vettore di puntatori unici a oggetti Account, 
+    garantisce che ogni account sia gestito in modo sicuro e che la memoria venga liberata automaticamente quando non è più necessaria*/
+    
 
 public:
     void addAccount(const Account &acc) {
@@ -61,7 +70,7 @@ public:
 
     Account* findAccount(int accNum) {
         for (auto &acc : accounts) {
-            if (acc->accountNumber == accNum) {
+            if (acc->accountNumber == accNum) {//vai all'oggetto Account puntato da acc e leggi accNum(numero account) 
                 return acc.get();
             }
         }
@@ -72,24 +81,28 @@ public:
     void showAvailableDestinations(int currentAccNum) {
         int count = 0;
 
+            //da sottolineare cosa fa
             for (auto &acc : accounts) {
-            // Mostra solo i conti che NON sono quello attualmente in uso
-                if (acc->accountNumber != currentAccNum) {
+                if (acc->accountNumber != currentAccNum) {// Mostra solo i conti che NON sono quello attualmente in uso
                 cout << "- Account Number: " << acc->accountNumber << "\n";
                 count++;
             }
         }
 
         if (count == 0) {
-            cout << "[Nessun altro account registrato nel sistema]\n";
+            cout << "[No other accounts available for transfer]\n";
         }
     }
+
+    //per trasferire i soldi
+    //all return esce dalla funzione 
     bool transfer(int fromAccNum, int toAccNum, double amount) {
         Account* fromAcc = findAccount(fromAccNum);
         Account* toAcc = findAccount(toAccNum);
         if (!fromAcc || !toAcc) return false;
-        if (amount <= 0 || fromAcc->balance < amount) return false;
+        if (amount <= 0 || fromAcc->balance < amount) return false;//verifica se l'utente possiede ancora abbastanza soldi || se dall'account il bilancio è minore della quantita da trasferire
 
+        //in entrambi i casi chiamo delle funzioni puntate dall puntatore in Account
         fromAcc->withdraw(amount);
         toAcc->deposit(amount);
         return true;
@@ -100,12 +113,14 @@ public:
     }
 };
 
+//da controllare
 bool isValidPin(const std::string &s) {
     if (s.size() != 4) return false;
     for (char c : s) if (!std::isdigit(static_cast<unsigned char>(c))) return false;
     return true;
 }
 
+//utilizzato per il login
 Account* login(Bank &bank) {
     int accNum;
     std::string pin;
@@ -215,19 +230,22 @@ int main() {
         switch (choice) {
 
             case 1: {
-                cout << "Your current balance: $" << userAccount->balance << "\n";
+                cout << "\n--- Account Balance ---\n";
+                cout << "Your current balance: $" << userAccount->balance << "\n";//accede alla variabile dall'account dell'utente e mostra il bilancio prendendolo dalla funzione 
                 break;
             }
 
             case 2: {
+                cout << "\n--- Deposit Money ---\n";
                 double amount;
                 cout << "Enter amount to deposit: $";
                 cin >> amount;
-                userAccount->deposit(amount);
+                userAccount->deposit(amount);//accede alla funzione deposit e prende la quantita depositata dall'utente 
                 break;
             }
 
             case 3: {
+                cout << "\n--- Withdraw Money ---\n";
                 double amount;
                 cout << "Enter amount to withdraw: $";
                 cin >> amount;
