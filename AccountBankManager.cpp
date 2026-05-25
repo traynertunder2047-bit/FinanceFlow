@@ -1,12 +1,27 @@
 /*Cose da cambiare
-1-- dividere le classi in file diversi per rendere il codice piu organizzato(verso la fine)
-2-- prima di creare tutta la UI migliorare la grafica da terminale rimediando alla continua ripetizione del menu che porta a rendere il programma un po più confusionario,
-3-- migliorare la UI delle risposte dei case tipo del bilancio, trasferimento, ritiro e altro, magari renderli un po più visibili/notabili e meno nascosti dal menu
+1-- dividere le classi in file diversi per rendere il codice piu organizzato(verso la fine), momentaneamente preferisco tenerle in questo modo anche se è un casino
+2-- prima di creare tutta la UI migliorare la grafica da terminale rimediando alla continua ripetizione del menu che porta a rendere il programma un po più confusionario{{{DA RISOLVERE}}}
 4-- quando chiede di depositare il denaro questo viene depositato senza alcuna traccia della provenienza, rimediare magari con l'aggiunta di un modo per guadagnare 
 denaro, per esempio con la compravendita di azioni e criptovalute
-5-- ERRORE -> case 6 -> quando avviene il login in un account non avviene la verifica del caso dove l'utente puo inserire le stesse credenziali(PIN e ACCNumber), magari è meglio fare
-come nel case 4 (Transfer) dove se viene messo lo stesso ACCNumber di quello che l'utente utilizza il programma si 'ferma' e dice all'utente che non è possibile compiere quell'azione e
-ritorna al menu {{{RISOLTO}}}
+*/
+
+/*----IDEE----
+1))Momentaneamente il programma mi sembra un po vuoto, l'idea era di aggiungere una serie di funzioni e classi che rappresentano account bancari di diverse aziende, l'utente
+riceverebbe un salario mensile che puo decidere di spendere in diversi modi, in alcuni casi tipo mercati virtuali per la compravendita di azioni e criptovalute,
+(il problema è che mi sembra un po fuori posto), 
+
+2))Si puo aggiungere insieme all'idea dei diversi account bancari di aziende anche la gestione di prestiti e mutui, anche debiti.()
+
+3))
+
+*/
+
+/* ------ NOMI ------
+ FlowBank (professionale, semplice e facile da ricordare)
+ FinanceFlow (suggerisce un flusso di denaro e finanza, più grande in dimensioni di programma e codice)
+ NexBank (suggerisce un'idea di banca del futuro, innovativa e tecnologica)
+
+ le migliori sono FinanceFlow e NexBank per momento
 */
 
 
@@ -120,7 +135,7 @@ bool isValidPin(const std::string &s) {
     return true;
 }
 
-//utilizzato per il login
+//LOGIN
 Account* login(Bank &bank) {
     int accNum;
     std::string pin;
@@ -140,12 +155,13 @@ Account* login(Bank &bank) {
     return nullptr;
 }
 
-//utile
+//NUMERO ACCOUNT 
 int generateAccountNumber() {
     static int seed = 1000; 
     seed++;
     return seed;
 }
+
 
 int main() {
     Bank bank;
@@ -222,8 +238,8 @@ int main() {
         cout << "4) Transfer money\n"; // new option
         cout << "5) Create additional bank account\n";
         cout << "6) Change account (login)\n";
-        cout << "7) Exit\n";
-        cout << "8) Show number of accounts\n";
+        cout << "7) Show number of accounts\n";
+        cout << "8) Exit\n";
         cout << "Choose an option: ";
         cin >> choice;
 
@@ -293,6 +309,8 @@ int main() {
                 break;
             }
 
+
+            //Possibilie aggiunta/modifica codice verifica sopra
             case 5: { // Create additional bank account
                 int newAccNum = generateAccountNumber();
                 std::string newPin;
@@ -311,6 +329,7 @@ int main() {
 
             case 6:
             { // Change account (login) with limited attempts
+                cout << "\n--- Change Account ---\n";
                 Account *previousUser = userAccount;
                 int changeAttempts = 0;
                 userAccount = nullptr;
@@ -318,10 +337,13 @@ int main() {
                 // Flag per capire se l'utente ha provato a inserire se stesso
                 bool selfLoginError = false;
 
-                while (!userAccount && changeAttempts < MAX_LOGIN_ATTEMPTS)
-                {
-                    userAccount = login(bank);
+                while (!userAccount && changeAttempts < MAX_LOGIN_ATTEMPTS) {
 
+                    cout << "Available accounts for login:\n";
+                    bank.showAvailableDestinations(previousUser->accountNumber);
+                    //mi serve previousUser->accountNumber per mostrare solo gli account diversi da quello attualmente in uso, non userAccount che mi avrebbe mostrate quello attuale
+
+                    userAccount = login(bank);//stesso login del login iniziale(chiama la funzione login)
                     if (userAccount != nullptr)
                     {
                         // CONTROLLO ERRORE: L'utente ha inserito lo stesso conto attuale?
@@ -354,21 +376,24 @@ int main() {
             }
 
             case 7: { // Exit
-                cout << "Thank you for using Trayner's Bank. Goodbye!\n";
+                cout << "\n--- Account Count ---\n";
+                cout << "Current number of accounts: " << bank.getAccountCount() << "\n";
                 break;
             }
 
             case 8: {
-                cout << "Current number of accounts: " << bank.getAccountCount() << "\n";
+                cout << "\n--- Exit ---\n";
+                cout << "Thank you for using Trayner's Bank. Goodbye!\n";
                 break;
             }
             
             default:
+                cout << "\n--- Error ---\n";
                 cout << "Invalid choice. Please try again.\n";
         }
   
       
-    } while (choice != 7);
+    } while (choice != 8);
 
     return 0;
 }
