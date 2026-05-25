@@ -6,13 +6,19 @@ denaro, per esempio con la compravendita di azioni e criptovalute
 */
 
 /*----IDEE----
-1))Momentaneamente il programma mi sembra un po vuoto, l'idea era di aggiungere una serie di funzioni e classi che rappresentano account bancari di diverse aziende, l'utente
+1)) Momentaneamente il programma mi sembra un po vuoto, l'idea era di aggiungere una serie di funzioni e classi che rappresentano account bancari di diverse aziende, l'utente
 riceverebbe un salario mensile che puo decidere di spendere in diversi modi, in alcuni casi tipo mercati virtuali per la compravendita di azioni e criptovalute,
 (il problema è che mi sembra un po fuori posto), 
 
-2))Si puo aggiungere insieme all'idea dei diversi account bancari di aziende anche la gestione di prestiti e mutui, anche debiti.()
+2)) Si puo aggiungere insieme all'idea dei diversi account bancari di aziende anche la gestione di prestiti e mutui, anche debiti.()
 
-3))
+3)) Pensavo di creare un vero e proprio wallet virtuale, tipo quelli utilizzati per le cripotvalute, non so esattamente cosa aggiungere per renderlo più completo e aderente all'idea iniziale
+si poteva dividere in 3 parti con: 1)Account -> tutta la parte bilancio, deposito, prelievo, 2)Wallet -> tutte le spese e i guadagni, magari con tanto di cronologia e rapporti
+gudagni/spese, 3)Market -> compravendita di azioni?? / criptovalute (può essere un po fuori posto), 4)Settings -> tutte le impostazioni -> cambio pin, account ,creazione account, numero acc.,  5) Exit.
+
+
+4)) Pensavo di aggiungere diverse cose: --1-- Nome per ogni account(Stringa che setto ToLowerCase), --2-- Incremento numero di caratteri del pin 4 -> 8 + aggiunta di un PIN con lettere, caratteri speciali e numero per 
+renderlo più complesso, --3-- Account per minorenni con limiti per i depositi, prelievo, spese, traferimenti, --4-- Notifiche sulle cose compiute tipo un prelievo(?).
 
 */
 
