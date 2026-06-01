@@ -1,0 +1,96 @@
+-python ->
+
+/---LATO DATABASE---
+-SQLite -> 
+*Per c++ libreira sqlite3
+*Su windows devo scaricare i file sorgente (sqlite3.h e sqlite.c) dal sito ufficiale di SQLite e includerli nel mio progetto oppure utilizzare un 
+gestore come vcpkg
+*Per python basta la libreria sqlite3 già inclusa in python
+
+
+/---LATO WEB SCRAPER---
+*beautifulsoup4 ->Gestisce la connessione internet e scarica l'HTML delle pagine
+*requests -> Analizza l'HTML per estrarre la cifra esatta dello stipendio.
+
+
+/---LATO INTEFACCIA GRAFICA---
+-Le 3 libreire principali che posso utilizzare sono: 
+-- Dear ImGui (Consigliata): È una libreria per GUI "immediate mode", leggerissima, famosissima nello sviluppo di videogiochi e strumenti interni.
+È perfetta se vuoi creare una grafica fluida in tempi brevi senza stravolgere la struttura del codice C++.
+
+--Qt (La più professionale): È il framework leader del settore per applicazioni desktop (usato da software come Adobe, VLC, Photoshop).
+È potentissimo e completissimo, ma ha una curva di apprendimento molto ripida e richiede di cambiare il modo in che compili il codice (usa strumenti come CMake o Qt Creator).
+
+--SFML / SDL2: Se preferisci un approccio più "manuale" orientato alla gestione di finestre e forme geometriche semplici.
+
+
+/---LATO FILE---
+C:.
+│   .gitignore
+│   Account.cpp
+│   Account.h
+│   AccountBankManager.exe
+│   AccountBankManagerTest.exe
+│   Bank.cpp
+│   Bank.h
+│   ideas.txt
+│   main.cpp
+│   requirements.txt
+│   trayner_bank.exe
+│   
+│   # --- DATABASE & SCRAPER ---
+│   🆕 banca.db                    (Creato in automatico dal codice al primo avvio)
+│   🆕 scraper.py                  (Lo script Python per il Web Scraping)
+│   🆕 database_manager.cpp        (Gestione delle query SQL in C++)
+│   🆕 database_manager.h          (Header per le funzioni del Database)
+│   🆕 sqlite3.c                   (Il motore di SQLite - Amalgamation)
+│   🆕 sqlite3.h                   (L'header di SQLite - Amalgamation)
+│
+├───.vscode
+│       c_cpp_properties.json
+│       tasks.json
+│
+├───output
+│       AccountBankManager.exe
+│
+└───🆕 imgui/                      (Cartella con i file sorgente della libreria grafica)
+        imgui.cpp
+        imgui.h
+        imgui_demo.cpp
+        imgui_draw.cpp
+        imgui_widgets.cpp
+        imgui_tables.cpp
+        imgui_internal.h
+        imconfig.h
+        imstb_rectpack.h
+        imstb_textedit.h
+        imstb_truetype.h
+        # File di "backend" (es. se usi le librerie grafiche standard GLFW o SDL + OpenGL)
+        imgui_impl_glfw.cpp         
+        imgui_impl_opengl3.cpp
+
+
+
+//
+Dato che stai aggiungendo nuovi file .cpp (sqlite3.c, database_manager.cpp e i file di ImGui),
+devi dire al compilatore C++ di includerli nel processo di compilazione, altrimenti riceverai errori di tipo "Undefined reference".
+
+Dovrai modificare il tuo file tasks.json dentro la cartella .vscode. Nella sezione "args", dove viene invocato il compilatore (es. g++),
+assicurati che invece di compilare solo main.cpp o i file singoli, compili tutti i file della cartella e di ImGui.
+
+Il consiglio migliore resta quello di procedere per gradi: prima crea scraper.py e i file del database per far funzionare tutta la logica da terminale e,
+solo quando tutto salva e legge alla perfezione nel file .db, dedicati a inserire i file della cartella imgui per disegnare la tua interfaccia bancaria.
+
+
+esempio configurazione per compilatore su tasks.json:
+"args": [
+    "-g",
+    "${workspaceFolder}/*.cpp",          // Compila tutti i tuoi file .cpp principali
+    "${workspaceFolder}/sqlite3.c",       // Compila il motore del database
+    "${workspaceFolder}/imgui/*.cpp",     // Compila la libreria grafica
+    "-o",
+    "${workspaceFolder}/output/AccountBankManager.exe",
+    // Se usi GLFW per la finestra grafica, dovrai aggiungere anche i suoi link:
+    "-lglfw3", 
+    "-lopengl32"
+]
