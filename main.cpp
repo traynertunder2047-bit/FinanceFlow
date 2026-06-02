@@ -1,9 +1,12 @@
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
-#include "Bank.h"//includo solo Bank.h perche' in questo file ho include Account.h perciò non c'e' bisogno di includerlo
+#include "./src/core/Bank.h"///includo solo Bank.h perche' in questo file ho include Account.h perciò non c'e' bisogno di includerlo
 
-//per comppilare e eseguire: g++ main.cpp Account.cpp Bank.cpp -o trayner_bank ; ./trayner_bank
+/*Se Account.h e Account.cpp si trovano nella stessa identica cartella, ti basta scrivere semplicemente #include "Account.h", invece in main.cpp entri nella cartella perciò 
+non c'è bisogno di specificare nuovamente il path*/
+
+//per comppilare e eseguire: g++ main.cpp ./src/core/Account.cpp ./src/core/Bank.cpp -o trayner_bank ; ./trayner_bank
 
 using namespace std;
 
