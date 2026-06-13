@@ -45,14 +45,14 @@ if __name__ == "__main__":
         work = " ".join(sys.argv[1:])
         
         # 2. Prova la prima sorgente
-        risultato = scrape_with_session(work)
+        result = scrape_with_session(work)
         
            
-        if not risultato:
-            risultato = "Stipendio non trovato (struttura del sito variata)."
+        if not result:
+            result = "Stipendio non trovato (struttura del sito variata)."
             
         # 5. STAMPA FINALE: Il C++ catturerà esattamente questa riga tramite il terminale
-        print(risultato)
+        print(result)
     else:
         print("Errore: Nessuna professione specificata da C++.")
 
