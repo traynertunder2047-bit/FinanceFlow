@@ -42,10 +42,10 @@ if __name__ == "__main__":
     # 1. Controlla se il C++ ha passato l'argomento (il nome del lavoro)
     if len(sys.argv) > 1:
         # Unisce gli argomenti in caso di nomi composti (es. ["Ingegnere", "Informatico"] -> "Ingegnere Informatico")
-        professione = " ".join(sys.argv[1:])
+        work = " ".join(sys.argv[1:])
         
         # 2. Prova la prima sorgente
-        risultato = scrape_with_session(professione)
+        risultato = scrape_with_session(work)
         
            
         if not risultato:
