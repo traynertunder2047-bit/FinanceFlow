@@ -9,6 +9,15 @@ def scrape_with_session(job_name):
         job_encoded = urllib.parse.quote_plus(job_name.lower())#prende il nome del lavoro e lo trasformatto tutto in minuscolo e trasforma i caratteri speciali e i spazi (chef da cucina  -> chef+da+cucina)
     
         with requests.Session(impersonate="chrome110") as session:
+            session.headers.update({
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+                "Accept-Language": "it-IT,it;q=0.9,en-US;q=0.8,en;q=0.7",
+                "Sec-Fetch-Dest": "document",
+                "Sec-Fetch-Mode": "navigate",
+                "Sec-Fetch-Site": "same-origin",
+                "Upgrade-Insecure-Requests": "1"
+            })
+
             url_talent = f"https://it.talent.com/salary?job={job_encoded}"
         
             # Timeout a 10 secondi: se internet è lento, evita di bloccare il programma C++ all'infinito
@@ -18,10 +27,10 @@ def scrape_with_session(job_name):
                 # Selettore HTML per la cifra dello stipendio medio su Talent.com
                 salary_card = soup.find('div', class_='time-card-main-amount')
                 if salary_card:
-                    return f"{salary_card.text.strip} (source: talent.com)"
+                    return f"{salary_card.text.strip()} (source: talent.com)"
                 
 
-
+            #if the site still dose not accept the script -> response = session.get(url_jobbydoo, headers={"Referer": "https://www.jobbydoo.it/"}, timeout=10)
             #Sito di riserva: Tenta lo scraping da jobbydoo.it
             url_jobbydoo= f"https://www.jobbydoo.it/stipendio/{job_encoded}"
             response = session.get(url_jobbydoo, timeout=10)
