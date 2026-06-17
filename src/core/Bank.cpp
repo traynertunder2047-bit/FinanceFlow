@@ -5,20 +5,20 @@ void Bank::addAccount(const Account &acc) {
     accounts.push_back(std::make_unique<Account>(acc));
 }
 
-Account* Bank::findAccount(int accNum) {
+Account* Bank::findAccount(const std::string &user) {
     for (auto &acc : accounts) {
-        if (acc->accountNumber == accNum) {
+        if (acc->username == user) {
             return acc.get();
         }
     }
     return nullptr;
 }
 
-void Bank::showAvailableDestinations(int currentAccNum) {
+void Bank::showAvailableDestinations(const std::string &currentUsername) {
     int count = 0;
     for (auto &acc : accounts) {
-        if (acc->accountNumber != currentAccNum) {
-            std::cout << "- Account Number: " << acc->accountNumber << "\n";
+        if (acc->username != currentUsername) {
+            std::cout << "- Username: " << acc->username << "\n";
             count++;
         }
     }
@@ -27,14 +27,13 @@ void Bank::showAvailableDestinations(int currentAccNum) {
     }
 }
 
-bool Bank::transfer(int fromAccNum, int toAccNum, double amount) {
-    Account* fromAcc = findAccount(fromAccNum);
-    Account* toAcc = findAccount(toAccNum);
+bool Bank::transfer(const std::string &fromUser, const std::string &toUser, double amount) {
+    Account* fromAcc = findAccount(fromUser);
+    Account* toAcc = findAccount(toUser);
     
     if (!fromAcc || !toAcc) return false;
     if (amount <= 0 || fromAcc->balance < amount) return false;
 
-    // Esegue prelievo e deposito chiamando i metodi dell'oggetto
     fromAcc->withdraw(amount);
     toAcc->deposit(amount);
     return true;
@@ -45,26 +44,27 @@ int Bank::getAccountCount() const {
 }
 
 Account* login(Bank &bank) {
-    int accNum;
+    std::string user;
     std::string pin;
 
     std::cout << "\n--- Login ---\n";
-    std::cout << "Enter account number: ";
-    std::cin >> accNum;
+    std::cout << "Enter Username: ";
+    std::cin >> user;
+    
+    // Controllo preventivo sulla lunghezza in fase di login
+    if (user.size() > 35) {
+        std::cout << "Invalid credentials (Username exceeds 35 characters).\n";
+        return nullptr;
+    }
+
     std::cout << "Enter PIN: ";
     std::cin >> pin;
 
-    Account* acc = bank.findAccount(accNum);
+    Account* acc = bank.findAccount(user);
     if (acc && acc->pin == pin) {
         std::cout << "Login successful!\n";
         return acc;
     }
     std::cout << "Invalid credentials.\n";
     return nullptr;
-}
-
-int generateAccountNumber() {
-    static int seed = 1000;
-    seed++;
-    return seed;
 }

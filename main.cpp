@@ -1,7 +1,8 @@
 #include <iostream>
-#include <ctime>
 #include <cstdlib>
-#include "./src/core/Bank.h"///includo solo Bank.h perche' in questo file ho include Account.h perciò non c'e' bisogno di includerlo
+#include "./src/core/Bank.h"
+
+///includo solo Bank.h perche' in questo file ho include Account.h perciò non c'e' bisogno di includerlo
 
 /*Se Account.h e Account.cpp si trovano nella stessa identica cartella, ti basta scrivere semplicemente #include "Account.h", invece in main.cpp entri nella cartella perciò 
 non c'è bisogno di specificare nuovamente il path*/
@@ -12,25 +13,31 @@ using namespace std;
 
 int main() {
     Bank bank;
-    srand(static_cast<unsigned int>(time(NULL)));
 
     cout << "<----------- Welcome to Trayner's Bank ------------->\n";
 
     // Fase iniziale: Creazione del primo account demo
-    int newAccNum = generateAccountNumber();
+    string username;
     string userPin;
     double userBalance;
     bool easyPin;
 
     cout << "Create your account:\n";
+    
+    // NUOVO CONTROLLO: Limite 35 caratteri per il primo account
     do {
-        cout << "Enter a PIN for your account (exactly 4 digits): ";
+        cout << "Enter a unique Username (no spaces, max 35 characters): ";
+        cin >> username;
+        if (username.size() > 35) {
+            cout << "Username too long! Maximum length allowed is 35 characters. Try again.\n";
+        }
+    } while (username.size() > 35);
+
+    do {
+        cout << "Enter a strong PIN (exactly 8 characters with letters, numbers and symbols): ";
         cin >> userPin;
         if (!isValidPin(userPin)) {
-            cout << "PIN must be exactly 4 numeric digits (no spaces or special characters).\n";
-            easyPin = true;
-        } else if (userPin == "1234" || userPin == "4321" || userPin == "0000" || userPin == "1111") {
-            cout << "PIN too common, please try again!\n";
+            cout << "PIN invalid! Must be 8 characters long and contain letters, digits, and special characters.\n";
             easyPin = true;
         } else {
             cout << "Set PIN successfully!\n";
@@ -41,11 +48,11 @@ int main() {
     cout << "Enter initial balance: ";
     cin >> userBalance;
 
-    bank.addAccount(Account(newAccNum, userPin, userBalance));
-    cout << "Account created! Your account number is " << newAccNum << ".\n";
+    bank.addAccount(Account(username, userPin, userBalance));
+    cout << "Account created successfully for user: " << username << ".\n";
 
     // Procedura di Login obbligatoria iniziale
-    int loginAccNum;
+    string loginUser;
     string loginPin;
     Account *userAccount = nullptr;
     int loginAttempts = 0;
@@ -58,15 +65,15 @@ int main() {
             return 0;
         }
 
-        cout << "Enter account number: ";
-        cin >> loginAccNum;
+        cout << "Enter Username: ";
+        cin >> loginUser;
         cout << "Enter PIN: ";
         cin >> loginPin;
 
-        userAccount = bank.findAccount(loginAccNum);
+        userAccount = bank.findAccount(loginUser);
         if (userAccount == nullptr || userAccount->pin != loginPin) {
             loginAttempts++;
-            cout << "Invalid account number or PIN. Attempt " << loginAttempts << "/" << MAX_LOGIN_ATTEMPTS << "\n";
+            cout << "Invalid Username or PIN. Attempt " << loginAttempts << "/" << MAX_LOGIN_ATTEMPTS << "\n";
             userAccount = nullptr;
         } else {
             cout << "Login successful!\n";
@@ -75,7 +82,9 @@ int main() {
 
     // Ciclo Principale dell'Applicazione Bancaria
     int choice;
+    string subInput;
     do {
+
         cout << "\n=====================================\n";
         cout << "<<<<<<<<<<<<< MAIN MENU >>>>>>>>>>>>>\n";
         cout << "=====================================\n";
@@ -84,11 +93,18 @@ int main() {
         cout << "3) Exit Program\n";
         cout << "-------------------------------------\n";
         cout << "Choose an option: ";
-        cin >> choice;
+        cin >> subInput;
+
+        if (subInput >= "1" && subInput <= "3" && subInput.size() == 1) {
+            choice = stoi(subInput);
+        } else {
+            choice = 0;
+        }
 
         switch (choice) {
         case 1: { // --- SOTTO-MENU GESTIONE FINANZIARIA ---
             int subChoice;
+            string subInput2;
             do {
                 cout << "\n--- Financial Transactions ---\n";
                 cout << "1) Check balance\n";
@@ -99,7 +115,14 @@ int main() {
                 cout << "6) Back to Main Menu <---\n";
                 cout << "------------------------------\n";
                 cout << "Choose an option: ";
-                cin >> subChoice;
+                cin >> subInput2;
+                
+                if (subInput2>= "1" && subInput2 <= "6" && subInput2.size() == 1) {
+                    subChoice = stoi(subInput2); // conversione string -> int 
+                } else {
+                    cout << "[ERROR]: Invalid option! Use numbers between 1-6.";
+                    subChoice = 0;
+                }
 
                 switch (subChoice) {
                 case 1:
@@ -121,20 +144,20 @@ int main() {
                 }
                 case 4: {
                     cout << "\nAvailable accounts for transfer:\n";
-                    bank.showAvailableDestinations(userAccount->accountNumber);
+                    bank.showAvailableDestinations(userAccount->username);
 
-                    int destAccNum;
+                    string destUser;
                     double amount;
-                    cout << "\nEnter the destination account number (0 to cancel): ";
-                    cin >> destAccNum;
+                    cout << "\nEnter the destination Username (type 'cancel' to abort): ";
+                    cin >> destUser;
 
-                    if (destAccNum == 0) {
+                    if (destUser == "cancel") {
                         cout << "Transfer canceled.\n";
                         break;
                     }
 
-                    Account *destAcc = bank.findAccount(destAccNum);
-                    if (destAcc == nullptr || destAcc->accountNumber == userAccount->accountNumber) {
+                    Account *destAcc = bank.findAccount(destUser);
+                    if (destAcc == nullptr || destAcc->username == userAccount->username) {
                         cout << "Error: Destination account invalid or inexistent.\n";
                         break;
                     }
@@ -142,7 +165,7 @@ int main() {
                     cout << "Enter the amount to transfer: $";
                     cin >> amount;
 
-                    if (bank.transfer(userAccount->accountNumber, destAccNum, amount)) {
+                    if (bank.transfer(userAccount->username, destUser, amount)) {
                         cout << "Transfer completed successfully!\n";
                     } else {
                         cout << "Transfer failed. Insufficient funds or invalid amount.\n";
@@ -185,7 +208,7 @@ int main() {
                     while (!userAccount && changeAttempts < MAX_LOGIN_ATTEMPTS) {
                         userAccount = login(bank);
                         if (userAccount != nullptr) {
-                            if (userAccount->accountNumber == previousUser->accountNumber) {
+                            if (userAccount->username == previousUser->username) {
                                 cout << "\n[ERRORE]: Sei gia' autenticato con questo account.\n";
                                 selfLoginError = true;
                                 break;
@@ -205,18 +228,29 @@ int main() {
                     break;
                 }
                 case 2: { // Creazione account aggiuntivo
-                    int newAcc = generateAccountNumber();
+                    string newUsername;
                     string newPin;
                     double newBalance;
+                    
+                    // NUOVO CONTROLLO: Limite 35 caratteri per l'account secondario
                     do {
-                        cout << "Set PIN (exactly 4 digits): ";
+                        cout << "Enter unique Username for the new account (no spaces, max 35 chars): ";
+                        cin >> newUsername;
+                        if (newUsername.size() > 35) {
+                            cout << "Username too long! Maximum 35 characters allowed.\n";
+                        }
+                    } while (newUsername.size() > 35);
+                    
+                    do {
+                        cout << "Set strong PIN (exactly 8 mixed characters): ";
                         cin >> newPin;
-                    } while (!isValidPin(newPin) || newPin == "1234" || newPin == "4321" || newPin == "1111" || newPin == "0000");
+                    } while (!isValidPin(newPin));
+                    
                     cout << "Enter initial deposit: ";
                     cin >> newBalance;
 
-                    bank.addAccount(Account(newAcc, newPin, newBalance));
-                    cout << "New account created: " << newAcc << "\n";
+                    bank.addAccount(Account(newUsername, newPin, newBalance));
+                    cout << "New account created for: " << newUsername << "\n";
                     break;
                 }
                 case 3:
