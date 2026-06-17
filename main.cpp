@@ -98,13 +98,14 @@ int main() {
         if (subInput >= "1" && subInput <= "3" && subInput.size() == 1) {
             choice = stoi(subInput);
         } else {
+            cout << "[ERROR]: Invalid option! Use numbers between 1-3.";
             choice = 0;
         }
 
         switch (choice) {
         case 1: { // --- SOTTO-MENU GESTIONE FINANZIARIA ---
             int subChoice;
-            string subInput2;
+            string subInput;
             do {
                 cout << "\n--- Financial Transactions ---\n";
                 cout << "1) Check balance\n";
@@ -115,10 +116,10 @@ int main() {
                 cout << "6) Back to Main Menu <---\n";
                 cout << "------------------------------\n";
                 cout << "Choose an option: ";
-                cin >> subInput2;
+                cin >> subInput;
                 
-                if (subInput2>= "1" && subInput2 <= "6" && subInput2.size() == 1) {
-                    subChoice = stoi(subInput2); // conversione string -> int 
+                if (subInput>= "1" && subInput <= "6" && subInput.size() == 1) {
+                    subChoice = stoi(subInput); // conversione string -> int 
                 } else {
                     cout << "[ERROR]: Invalid option! Use numbers between 1-6.";
                     subChoice = 0;
@@ -187,6 +188,7 @@ int main() {
 
         case 2: { // --- SOTTO-MENU GESTIONE ACCOUNT ---
             int subChoice;
+            string subInput;
             do {
                 cout << "\n--- Manage Account ---\n";
                 cout << "1) Change account (Login)\n";
@@ -195,7 +197,14 @@ int main() {
                 cout << "4) Back to Main Menu <---\n";
                 cout << "----------------------\n";
                 cout << "Choose an option: ";
-                cin >> subChoice;
+                cin >> subInput;
+
+                if (subInput >= "1" && subInput <= "4" && subInput.size() == 1) {
+                    subChoice = stoi(subInput);
+                } else {
+                    cout << "[ERROR]: Invalid option! Use numbers between 1-4.";
+                    subChoice = 0;
+                }
 
                 switch (subChoice) {
                 case 1: { // Cambio account (Login)
