@@ -7,9 +7,8 @@ using namespace std;
 
 
 int main() {
-    string job_name;
-    string command;
-    string pythonOutput;
+    string job_name, command, pythonOutput;
+    double monthlySalary, survivalExpense, leisureExpense, rentExpense, totalExpenses, savingsCapacity;
     char buffer[128];//crea una memoria temporanea utilizzata come contenitore per i caratteri mandati dallo scraper
     cout << "Enter the name the job you want to analyse: ";
     cin >> job_name;
@@ -31,31 +30,34 @@ int main() {
  
     _pclose;    
     float ral = stof(pythonOutput);
-    cout << "RAL recived: " << ral << "\n";
-
-    
+    cout << "RAL recived: " << ral << "\n";//alternative cout << "Annual salary(RAL) -> ";
 
     cout << "Market values found: ";
 
-    cout << "Annual salary(RAL) -> ";
-    cout << "Estimated monthly salary: ";
+    monthlySalary = ral / 12;
+    cout << "Estimated monthly salary: " << monthlySalary << "\n";
+    
     /*TUTTA LA STRUTTURA PER IL SALARIO ANNUALE E IL CALCOLO DEL SALARIO MENSILE ESTIMATO*/
     cout << "Set up your monthly spending profile: ";
-    cout << "1. Enter the expense of your housing/rent/morgage: ";
-    cout << "2. Enter the expense for survival: ";
-    cout << "3. Enter the expense for transport/leisure: ";
+    
+    cout << "1. Enter the monthly expense of your housing/rent/morgage: ";
+    cin >> rentExpense;
+    cout << "2. Enter the monthly expense for survival: ";
+    cin >> survivalExpense;
+    cout << "3. Enter the monthly expense for transport/leisure: ";
+    cin >> leisureExpense;
     /*TUTTA LA STRUTTURA PER LE SPESE  */
 
+    totalExpenses = rentExpense + survivalExpense + leisureExpense;
     cout << "ANALYSIS RESULT: ";
-    cout << "Total monthly expenses: ";
+    cout << "Total monthly expenses: " << totalExpenses << "\n";
+
+    savingsCapacity = monthlySalary - totalExpenses;
     cout << "Savings capacity: ";
-    
+    //COTNROLLO PER VERIFICARE SE L'UTENTE PUO' PASSARE ALLA PIANIFICAZIONE DEGLI OBIETTIVI
     cout << "Objectives planing: ";
-
-    cout << "Obiettivo risparmio";
+    cout << "Savings objective";
     cout << "With your actual profile you will achive your objective int tot months";
-
-
 
     cout << "Investement simulation";
     return 0;
