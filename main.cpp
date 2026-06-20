@@ -1,17 +1,39 @@
 #include <iostream>
 #include <string>
+#include <cstdlib>// per stof
+#include <cstdio>// per _popen e _pclose
 
 using namespace std;
 
 
 int main() {
     string job_name;
-
+    string command;
+    string pythonOutput;
+    char buffer[128];//crea una memoria temporanea utilizzata come contenitore per i caratteri mandati dallo scraper
     cout << "Enter the name the job you want to analyse: ";
     cin >> job_name;
-    /*TUTTA LA STRUTTURA PER LO SCRAPER */
-
     cout << "[Python is scraping jobadatalake API for job]";
+    /*TUTTA LA STRUTTURA PER LO SCRAPER */
+    command = "Python scraper.py \"" + job_name + "\"";//le \" si usano per inserire le virgolette attorno al nome del lavoro in modo che python riceva una string unica
+    FILE* pipe = _popen(command.c_str(), "r");
+    /*_popen fa 3 cose contemporaneamente:  crea un nuovo processo in background(terminale nascosto), esegue il comando contenuto in command, apre un canale di comunicazione
+    "pipe" tra lo script python e c++, "r" sta per read e permette allo script in c++ di leggere tutto quello che viene messo in print dallo scraper,
+    c_str() trasforma la string in una stringa del linguaggio C richiesta dalla funzione _popen */
+    if (!pipe) {
+        cout << "[ERROR]: Could not execute the scraper script.\n";
+        return 1;
+    }
+    while (fgets(buffer, sizeof(buffer), pipe) != nullptr) {/*buffer è il contenitore che conterrà i caratteri mandati dallo scraper, sizeof è il massimo di caratteri che può raccogliere
+        pipe è il canale da dove li deve prendere*/
+        pythonOutput += buffer;
+    }
+ 
+    _pclose;    
+    float ral = stof(pythonOutput);
+    cout << "RAL recived: " << ral << "\n";
+
+    
 
     cout << "Market values found: ";
 
@@ -32,18 +54,12 @@ int main() {
 
     cout << "Obiettivo risparmio";
     cout << "With your actual profile you will achive your objective int tot months";
+
+
+
+    cout << "Investement simulation";
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
