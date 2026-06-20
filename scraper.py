@@ -7,7 +7,7 @@ def get_salary_from_jobdatalake(job_name):
         url = "https://api.jobdatalake.com/v1/jobs/search"
         
         # Sostituisci questa stringa con la chiave reale che hai appena generato
-        API_KEY = "LA_TUA_CHIAVE_GENERATA_QUI" 
+        API_KEY = "jdl_c6cdb454289a44eefbb3b353e10bb69f5d2bcc21c404cb2b" 
         
         # Passiamo i parametri di ricerca (il lavoro inserito in C++ e la nazione)
         params = {
