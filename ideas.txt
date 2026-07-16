@@ -1,8 +1,0 @@
---Per la gestione dati basta creare un solo database con 2 tabelle ben distinte:
------La prima che gestisca tutte le professioni/lavori e i salari 
------La seconda tabella che gestisca tutto il lato account ovvero PIN, NOME ACCOUNT.
-
-
-*Togliere account number e aggiungere l'opzione "inscerisci nome" e "inscerisci cognome" per rendere il programmma più dettagliato e pertinente all'obiettivo.
-
-*
