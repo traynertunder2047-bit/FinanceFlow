@@ -1,0 +1,192 @@
+{
+  "australia": {
+    "display_name": "Australia",
+    "start_page": 188,
+    "end_page": 202
+  },
+  "austria": {
+    "display_name": "Austria",
+    "start_page": 203,
+    "end_page": 215
+  },
+  "belgium": {
+    "display_name": "Belgium",
+    "start_page": 216,
+    "end_page": 230
+  },
+  "canada": {
+    "display_name": "Canada",
+    "start_page": 231,
+    "end_page": 246
+  },
+  "chile": {
+    "display_name": "Chile",
+    "start_page": 247,
+    "end_page": 257
+  },
+  "colombia": {
+    "display_name": "Colombia",
+    "start_page": 258,
+    "end_page": 267
+  },
+  "costa rica": {
+    "display_name": "Costa Rica",
+    "start_page": 268,
+    "end_page": 274
+  },
+  "czechia": {
+    "display_name": "Czechia",
+    "start_page": 275,
+    "end_page": 283
+  },
+  "denmark": {
+    "display_name": "Denmark",
+    "start_page": 284,
+    "end_page": 296
+  },
+  "estonia": {
+    "display_name": "Estonia",
+    "start_page": 297,
+    "end_page": 305
+  },
+  "finland": {
+    "display_name": "Finland",
+    "start_page": 306,
+    "end_page": 314
+  },
+  "france": {
+    "display_name": "France",
+    "start_page": 315,
+    "end_page": 331
+  },
+  "germany": {
+    "display_name": "Germany",
+    "start_page": 332,
+    "end_page": 345
+  },
+  "greece": {
+    "display_name": "Greece",
+    "start_page": 346,
+    "end_page": 358
+  },
+  "hungary": {
+    "display_name": "Hungary",
+    "start_page": 359,
+    "end_page": 368
+  },
+  "iceland": {
+    "display_name": "Iceland",
+    "start_page": 369,
+    "end_page": 380
+  },
+  "ireland": {
+    "display_name": "Ireland",
+    "start_page": 381,
+    "end_page": 392
+  },
+  "israel": {
+    "display_name": "Israel",
+    "start_page": 393,
+    "end_page": 403
+  },
+  "italy": {
+    "display_name": "Italy",
+    "start_page": 404,
+    "end_page": 416
+  },
+  "japan": {
+    "display_name": "Japan",
+    "start_page": 417,
+    "end_page": 434
+  },
+  "korea": {
+    "display_name": "Korea",
+    "start_page": 435,
+    "end_page": 448
+  },
+  "latvia": {
+    "display_name": "Latvia",
+    "start_page": 449,
+    "end_page": 459
+  },
+  "lithuania": {
+    "display_name": "Lithuania",
+    "start_page": 460,
+    "end_page": 475
+  },
+  "luxembourg": {
+    "display_name": "Luxembourg",
+    "start_page": 476,
+    "end_page": 487
+  },
+  "mexico": {
+    "display_name": "Mexico",
+    "start_page": 488,
+    "end_page": 497
+  },
+  "netherlands": {
+    "display_name": "Netherlands",
+    "start_page": 498,
+    "end_page": 512
+  },
+  "new zealand": {
+    "display_name": "New Zealand",
+    "start_page": 513,
+    "end_page": 520
+  },
+  "norway": {
+    "display_name": "Norway",
+    "start_page": 521,
+    "end_page": 532
+  },
+  "poland": {
+    "display_name": "Poland",
+    "start_page": 533,
+    "end_page": 547
+  },
+  "portugal": {
+    "display_name": "Portugal",
+    "start_page": 548,
+    "end_page": 558
+  },
+  "slovak republic": {
+    "display_name": "Slovak Republic",
+    "start_page": 559,
+    "end_page": 573
+  },
+  "slovenia": {
+    "display_name": "Slovenia",
+    "start_page": 574,
+    "end_page": 585
+  },
+  "spain": {
+    "display_name": "Spain",
+    "start_page": 586,
+    "end_page": 596
+  },
+  "sweden": {
+    "display_name": "Sweden",
+    "start_page": 597,
+    "end_page": 606
+  },
+  "switzerland": {
+    "display_name": "Switzerland",
+    "start_page": 607,
+    "end_page": 619
+  },
+  "türkiye": {
+    "display_name": "Türkiye",
+    "start_page": 620,
+    "end_page": 627
+  },
+  "united kingdom": {
+    "display_name": "United Kingdom",
+    "start_page": 628,
+    "end_page": 636
+  },
+  "united states": {
+    "display_name": "United States",
+    "start_page": 637,
+    "end_page": 657
+  }
+}
