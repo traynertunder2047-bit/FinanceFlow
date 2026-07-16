@@ -2,3 +2,10 @@
 *.exe
 output/
 .vscode/
+.env
+
+# Python virtual enviroment and cache
+.venv/
+__pycache__/
+*.pyc
+
