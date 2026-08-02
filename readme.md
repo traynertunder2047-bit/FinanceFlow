@@ -42,7 +42,7 @@ then lets you plan savings and financial objectives.
 ## Setup
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/traynertunder2047-bit/FinanceFlow
 cd FinanceFlow
 python -m venv .venv
 .venv\Scripts\activate        # Windows
