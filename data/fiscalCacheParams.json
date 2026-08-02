@@ -1,0 +1,624 @@
+{
+  "south korea": {
+    "params": {
+      "country": "south korea",
+      "year": 2025,
+      "currency": "KRW",
+      "standard_deduction": 1500000.0,
+      "tax_brackets": [
+        {
+          "upper_bound": 14000000.0,
+          "rate": 0.06
+        },
+        {
+          "upper_bound": 50000000.0,
+          "rate": 0.15
+        },
+        {
+          "upper_bound": 88000000.0,
+          "rate": 0.24
+        },
+        {
+          "upper_bound": 150000000.0,
+          "rate": 0.35
+        },
+        {
+          "upper_bound": 300000000.0,
+          "rate": 0.38
+        },
+        {
+          "upper_bound": 500000000.0,
+          "rate": 0.4
+        },
+        {
+          "upper_bound": 1000000000.0,
+          "rate": 0.42
+        },
+        {
+          "upper_bound": null,
+          "rate": 0.45
+        }
+      ],
+      "tax_credit": 0,
+      "sources": [
+        "Taxing Wages 2026 (OECD), [Chapter: Korea - Taxing Wages 2026]"
+      ],
+      "notes": "The standard deduction of 1,500,000 KRW is the basic allowance for the taxpayer. There is also a progressive employment income deduction up to a maximum of 20,000,000 KRW. The tax credit system includes a complex, income-dependent Working Tax Credit and an alternative standard credit of 130,000 KRW for wage earners who do not claim certain other deductions."
+    },
+    "original_source": "pdf",
+    "saved_the": "2026-07-28T17:10:57+00:00"
+  },
+  "poland": {
+    "params": {
+      "country": "poland",
+      "year": 2025,
+      "currency": "PLN",
+      "standard_deduction": 3000.0,
+      "tax_brackets": [
+        {
+          "upper_bound": 120000.0,
+          "rate": 0.12
+        },
+        {
+          "upper_bound": null,
+          "rate": 0.32
+        }
+      ],
+      "tax_credit": 3600.0,
+      "sources": [
+        "Taxing Wages 2026 (OECD), [Chapter: Poland - Taxing Wages 2026] chapter"
+      ],
+      "notes": "The document's 'Tax schedule' section describes the second bracket's tax amount as 'PLN 10 800+ 32% of surplus over PLN 120 000'. This 'PLN 10 800' is derived from applying the 12% rate to the first bracket (PLN 120,000 * 0.12 = PLN 14,400) and then subtracting the basic tax credit (PLN 14,400 - PLN 3,600 = PLN 10,800). For the purpose of this extraction, the raw bracket rates and thresholds are taken from the '2025 Parameter values' section, and the basic tax credit is reported separately. There are no state or local income taxes. A Solidarity Surcharge of 4% applies to income over PLN 1,000,000, but this is a separate surcharge and not part of the main income tax bracket structure."
+    },
+    "original_source": "pdf",
+    "saved_the": "2026-07-28T17:55:37+00:00"
+  },
+  "us": {
+    "params": {
+      "country": "us",
+      "year": 2025,
+      "currency": "USD",
+      "standard_deduction": 15750.0,
+      "tax_brackets": [
+        {
+          "upper_bound": 11925.0,
+          "rate": 0.1
+        },
+        {
+          "upper_bound": 48475.0,
+          "rate": 0.12
+        },
+        {
+          "upper_bound": 103350.0,
+          "rate": 0.22
+        },
+        {
+          "upper_bound": 197300.0,
+          "rate": 0.24
+        },
+        {
+          "upper_bound": 250525.0,
+          "rate": 0.32
+        },
+        {
+          "upper_bound": 626350.0,
+          "rate": 0.35
+        },
+        {
+          "upper_bound": null,
+          "rate": 0.37
+        }
+      ],
+      "tax_credit": 0.0,
+      "sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMvCou3bB6HtfDvxl6_yG8Kd2K90QBbwrTGkJ4vlOGml9A4CizoHHw-ovZcBChpQc2N_4f7Rnrisns0k02iY7V1nar20QcQykcItseb0HH71S5TiEGqRzS0dXTZcQ2VQvmpZMHY8GwU0QJnSMr_NJxJ_nrWAQtd-gwP5A=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPEczQT9Ucjqk3yry8NHzuZb1OTML8ue5poEgAEqvG9rWhFexD4EphVU-aupk6g0Egc_dbSTRjGReVu_OyT0v294H7v7PctvnnjCd2aUjvdG_KWGsN0CSgDfPR39G7rpl1h8qg4V3xzeSodsibmJEHt10pC2g=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIvXNn5QA-XeKzcvRyycMI4XATnLOavDfouiElE1OW4lxb8wq8xpTToceTN8dM0MSZErJvGvDLlZZwV19_1oSVAgl-GvZleJWOikvcfYJvmnj_CI-LsLRAQiR7F2GyGVO2VbCcFQKikfjDNjarFk4CcpgawTwptY=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnx53G-mNRtof66-2u364oOoEbZlsZ9S8c_lH7-RE6oLSXbvi9fJnvXHl4XgQ6XAzEK8XpRS_VmL3qw0Ag0arrYr5aZqAaAfIpZHdWzRx6De1IUCVVwwnylT-IT-D4bYWyA8P17_ltXFrxslL7ZeFg3g==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHa2gn7HwpG1GR0Tpotwlq8QLNJj4vr7veAlePk0JaDSTZmb5r9sGUsIquZ0PSkXSL7X1pHwbrZtmnKxHHHqLJmeqhX-KjgYf-2RLCDhuFjeDnxceJqyhQ873GaTMGZi7-5BXKAm3HbhLTl4xZ0yGNZ6PNbqxOy0dCGilonMVpZCsjy29UTZdtS9jPEagqTst34td21IOc=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGoC1Xl4TvYe43VvHhUMH8EqRnUw75xrW7LlgnpPoqbW7iqqdtx4V6cH2bvxALcOD6hONJ3q5KzImrhEjoHJGTq1uaSpS5u_tM0aGYi4M2vblr-IU-BNEvIhzKwD7lKPcAuHAx_xYc884rA3jfBatEUvnJ1vF7KYgLJs7LWI-zxAMTCgonL8QAd6ATXkLiyVqigfCCtef4B7yIGeMRVx-TOAzYKIrk=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9EK4XzBvhVQIbCp5MxTgKpf1YmKsFs5zsiDyRf7lvlpDXyedaiXwBOeKm6zQritUTgWcrUIqxxH-D525vcNvpNRO0p_cngXrPk-r9hYwLtupOplD2VKA2Oq9dKgo5roVoGk5kQtIhxg_gc_zTKYvWjoiUuqTl1K50rgIhzjLNV-0=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHotkD5UT7zDQalSdd57jBA4m_g_QhO5D7j-s6ubrmBdl8pt1BH4KEKwWXS-Ch-WN-fWp01IZjOq81CnZTZ2zUEZrgmxKjz06h74wNFlPxN3F0_SOqctIe629ajMExn07z_cN_IKD47sryjYU7UgvLm9D2vCDBRUW3wYcRxY1kiXx5QLngRGnUKhxfLY_4kFLmHatjFoPTaBv3L257VnQop",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvBbk-5aQrqdvydJAvoKRa3ZMkyxsMS8x1oEsYrl7SxUxpQI5oBNWH6X9udTO06ZkljO0yMErTGPujzNl_B-Is82WdlOV6Rqbvq-FE4tzy8-EwVFqvib7BbGXktzuuRTgSDiYB2skTAVfRlKfo2mTR-62d2qGdjG1PNgnm-P9DcAfsGSm6-NkNl-Fq6y9kuVKG-OV-oFtCX9lx288=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXWJu2W7Z_kPHft2Rsiif8TT6u3DE-4l-vjDrDqKKKbxrK-k803UXeBuegMTun_6mVLurgcF9bIf2C0Peb0HKPQR15Aws98eaRFpsJ42ceQzucLynmu2bohq9wIZxygxn71NIvBDRmF84vYnlnRcTqWFpw4xsUC7pc6oH5yMzfR_Cj-w=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDEl9d2Nq8xJ19CByMIOxGo7e8q2ROz9WzIHbhu6nHu7W5s-knYZugirirNEJ7Zy-PIfkIqwrLwnjTTfxqYaH3lKup_AC7Zq268xfTSOaTBiGDvOUExUrjBVk7mTSGYNngHLufaSNp_yeQjx6veFsOQ5_LmrtdbbT1eBvZlnG0RWNDA6myCWcqeGCkULYUa_N_J6c="
+      ],
+      "notes": "No simple, fixed-amount basic tax credit was found for a single employee with no dependents; existing credits are either income-dependent, require specific circumstances (e.g., children, education expenses), or are not a single flat number."
+    },
+    "original_source": "web",
+    "saved_the": "2026-07-28T18:03:22+00:00"
+  },
+  "united states": {
+    "params": {
+      "country": "united states",
+      "year": 2025,
+      "currency": "USD",
+      "standard_deduction": 15750.0,
+      "tax_brackets": [
+        {
+          "upper_bound": 11925.0,
+          "rate": 0.1
+        },
+        {
+          "upper_bound": 48475.0,
+          "rate": 0.12
+        },
+        {
+          "upper_bound": 103350.0,
+          "rate": 0.22
+        },
+        {
+          "upper_bound": 197300.0,
+          "rate": 0.24
+        },
+        {
+          "upper_bound": 250525.0,
+          "rate": 0.32
+        },
+        {
+          "upper_bound": 626350.0,
+          "rate": 0.35
+        },
+        {
+          "upper_bound": null,
+          "rate": 0.37
+        }
+      ],
+      "tax_credit": 0.0,
+      "sources": [
+        "Taxing Wages 2026 (OECD), [Chapter: United States - Taxing Wages 2026]"
+      ],
+      "notes": "The document describes various tax credits (Earned Income Credit, Child Tax Credit, Other Dependent Tax Credit) which are income-dependent, phase out, or are dependent on the number of children/dependents, and thus do not qualify as a simple, fixed-amount basic tax credit for all taxpayers."
+    },
+    "original_source": "pdf",
+    "saved_the": "2026-07-28T18:05:21+00:00"
+  },
+  "new zealand": {
+    "params": {
+      "country": "new zealand",
+      "year": 2026,
+      "currency": "NZD",
+      "standard_deduction": 0.0,
+      "tax_brackets": [
+        {
+          "upper_bound": 15600.0,
+          "rate": 0.105
+        },
+        {
+          "upper_bound": 53500.0,
+          "rate": 0.175
+        },
+        {
+          "upper_bound": 78100.0,
+          "rate": 0.3
+        },
+        {
+          "upper_bound": 180000.0,
+          "rate": 0.33
+        },
+        {
+          "upper_bound": null,
+          "rate": 0.39
+        }
+      ],
+      "tax_credit": 0.0,
+      "sources": [
+        "https://www.ird.govt.nz/income-tax/tax-rates-for-individuals",
+        "https://www.taxatlas.com/tax-rates/new-zealand",
+        "https://www.payecalculator.co.nz/nz-tax-brackets-2026-2027"
+      ],
+      "notes": "New Zealand's tax year runs from 1 April to 31 March. The reported tax brackets are effective from 1 April 2025 and apply to the 2026/2027 tax year. New Zealand does not have a tax-free threshold; all income is taxed from the first dollar. An Independent Earner Tax Credit (IETC) exists, offering up to NZD 520 per year for individuals earning between NZD 24,000 and NZD 70,000, but it is income-dependent and phases out, thus not meeting the criteria for a simple, fixed-amount basic tax credit."
+    },
+    "original_source": "web",
+    "saved_the": "2026-07-30T15:26:07+00:00"
+  },
+  "germany": {
+    "params": {
+      "country": "germany",
+      "year": 2025,
+      "currency": "EUR",
+      "standard_deduction": 12096.0,
+      "tax_brackets": [
+        {
+          "upper_bound": 17443.0,
+          "rate": 0.14
+        },
+        {
+          "upper_bound": 68480.0,
+          "rate": 0.2397
+        },
+        {
+          "upper_bound": 277825.0,
+          "rate": 0.42
+        },
+        {
+          "upper_bound": null,
+          "rate": 0.45
+        }
+      ],
+      "tax_credit": 0.0,
+      "sources": [
+        "Taxing Wages 2026 (OECD), [Chapter: Germany - Taxing Wages 2026] 330  TAXING WAGES 2026 © OECD 2026 Germany  331 TAXING WAGES 2026 © OECD 2026 Germany 2025 The tax/benefit position of single persons ... 333  TAXING WAGES 2026 © OECD 2026 The national currency is the Euro (EUR). ... Personal Income Tax Systems Central/federal government income taxes ... Tax schedule ... 334  TAXING WAGES 2026 © OECD 2026 ... 335  TAXING WAGES 2026 © OECD 2026"
+      ],
+      "notes": "The German tax schedule is formula-based. For taxable income between EUR 12,097 and EUR 68,480, the marginal tax rate is not constant but increases progressively within each bracket. The rates provided for these brackets (0.1400 and 0.2397) represent the *starting* marginal rate at the lower bound of each respective bracket. Additionally, a solidarity surcharge of 5.5% is levied on the income tax liability, subject to an exemption limit and a phase-in mechanism, which is not included in these bracket rates."
+    },
+    "original_source": "pdf",
+    "saved_the": "2026-07-30T15:28:16+00:00"
+  },
+  "romania": {
+    "params": {
+      "country": "romania",
+      "year": 2026,
+      "currency": "RON",
+      "standard_deduction": 0,
+      "tax_brackets": [
+        {
+          "upper_bound": null,
+          "rate": 0.1
+        }
+      ],
+      "tax_credit": 0,
+      "sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG07fAT_LBVPftJnhBudGnV1u_cOYW-aYfADdTESMjmoGdOQsgcSwlRPV_PRSCAP0njlPyAKJlX1ne4g6rQMy7JBVHWz1ud3vUbFuz9VtyL06d2jtMNng8VLO3xcfvcw5ddn2zVJWiEcOPYErXEZadhUDOfTGZ5sB-S9zDpNOZJ2iC8qs0CFVa80FRGbeGktdn73mo=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_akYMmReSqwrgPTs5AdPsXw6pH1qq2k2JgGnJAJqElDje3BiJuvl7dE6zcGStOmLGI_NxSInoIf6D1LEXvrP575mBxzcXUIdMYEd8go1JmEmnvoG-sV3FfUakPsoYXV3a6D73cSZfW0Fjan6tc_uGfFDmJ-y3sM8DA74zUdxzp6yUjmLNQIcmDLxK7PFozMseCxYq_HC3zBCcvFwW5ybQ6c2w-mitqPGV",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZUg4rqOzuCfkWQYZMVgCwpzrb5SKYQQc8mxpcFWt2UzLBhOuyOYG_80e_ggUoP70_EPPZtuSKzZyPad--O64-ZlA8eFGb7-37talHJEzZ27lH7KKY87MZUdomwRUVoax-26lU7SVWvg==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHREwj02So0339nbEwmYegHkB6JkMVCFG0_p97csQE0pT20VedX5BQnhKCKtDk9Ew8JB5USbEoPmBcHN9ckYGLRMtk73X54IYtSvB9-iNbgFxFxV7eeiMbfTm9OTHEPQm6vGN7xAqOHre-U9EckGudW9MDoHhSSOjw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFw0brtVa-ZE82GtLYEnvrtCpSYaIYuDnLYIB8TnT28o-n5hkivyUnXHLpLz-km9wQiqB0SHFyKpaZRix_9dWrIbiTT4JH6BPxcxJAsottFouW6v43IuS3r6OBoT4rPYpqdM1BKSO0=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9Ki9ASO5ZEGdlSe7Xs-oZXVR5v9XNLGV67V7shH4fmgad0XQi2DDEzfUpHObGzjNm6p5I-PMRlLeI-HDioT0XtFTXz9Qr26x53qWnTp08ggwGkF4_7lY0B8kDbGYvk2AzKHm8hrLMqw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFv7iaJHdFbG9V1T5KIphscb298IftHNKCE6ZTsULblXS3n5y7-2GM3mHb20BpeZJ-emNce0reVSWDq7BDwk7qeZEt00BuSzKFUI_V2F3is7hqwpMvQ0nfSJjvnpU771nA6hG4uXyJXv9F4Fp8FfBeYrWoVBGQ21c5fMiJojlXEP2s31Rw=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWjpaACBdfHLOYp3iGEQQXMzJ14eESFaqTYa_0N8rOAjxS__YiW9X3QrvEfUF3sMEmF9reyetIBoVJOfk9nlXgD6Dl9S841pEZPiQ4R6R4qAbKKgrRyo-qmvyK7jspFvJzF5nsHMSETIND9J9TOjRXHhOWE-lLT6wdjH0V7wyIXRkwVPxl2xTyRJ08YAnWaNzgvl-yg3qruX3zTxiK0na3",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECXXO1Y4npDwNDNHbD_BjdW3SRwya1f0OmkA2gZ9NaH7wp3NLoHvdL4EVIg4g693l_FWbH1s7pySbQ1xjq6Bw0yihn_wjEFjUhGxllSCmhtAYbUuzkhxxxL22bVeful2bppT1zk26rb1uYXkgw8kW1G-OLJjdI5bHzL-YrnsgTw0wfTPkTDaHK",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgvFtok53MFgwDtCl7gARP8wsZc-6l7v9MBZ7ZOSUBukiyibc8_jPHDEvETALBKvuM-KsP_3ep6D9DD20jzVXCmPG5QeOPfI8tu8SJ3088dtIqXqVqMO2xI2xLmSm3z-iFzzbn_ISH"
+      ],
+      "notes": "Romania applies a flat personal income tax rate of 10% for employment income. There are no progressive tax brackets. While personal deductions exist, they are income-dependent and vary based on the number of dependents, and thus cannot be stated as a simple fixed standard deduction. Romania does not have a system of simple, fixed-amount basic tax credits."
+    },
+    "original_source": "web",
+    "saved_the": "2026-07-31T10:20:30+00:00"
+  },
+  "norway": {
+    "params": {
+      "country": "norway",
+      "year": 2025,
+      "currency": "NOK",
+      "standard_deduction": 0.0,
+      "tax_brackets": [
+        {
+          "upper_bound": 217400.0,
+          "rate": 0.0
+        },
+        {
+          "upper_bound": 306050.0,
+          "rate": 0.017
+        },
+        {
+          "upper_bound": 697150.0,
+          "rate": 0.04
+        },
+        {
+          "upper_bound": 942400.0,
+          "rate": 0.137
+        },
+        {
+          "upper_bound": 1410750.0,
+          "rate": 0.167
+        },
+        {
+          "upper_bound": null,
+          "rate": 0.177
+        }
+      ],
+      "tax_credit": 0.0,
+      "sources": [
+        "Taxing Wages 2026 (OECD), norway chapter"
+      ],
+      "notes": "The extracted bracket tax applies to 'personal income' from which no deductions are allowed. Central government income tax also includes a component on 'ordinary income' which allows for deductions, but this is not part of the bracket structure itself."
+    },
+    "original_source": "pdf",
+    "saved_the": "2026-08-01T16:16:28+00:00"
+  },
+  "swiss": {
+    "params": {
+      "country": "swiss",
+      "year": 2026,
+      "currency": "CHF",
+      "standard_deduction": 15200.0,
+      "tax_brackets": [
+        {
+          "upper_bound": 33200.0,
+          "rate": 0.0077
+        },
+        {
+          "upper_bound": 43500.0,
+          "rate": 0.0088
+        },
+        {
+          "upper_bound": 58000.0,
+          "rate": 0.0264
+        },
+        {
+          "upper_bound": 76200.0,
+          "rate": 0.0297
+        },
+        {
+          "upper_bound": 82100.0,
+          "rate": 0.066
+        },
+        {
+          "upper_bound": 108900.0,
+          "rate": 0.066
+        },
+        {
+          "upper_bound": 141500.0,
+          "rate": 0.088
+        },
+        {
+          "upper_bound": 185100.0,
+          "rate": 0.11
+        },
+        {
+          "upper_bound": 793900.0,
+          "rate": 0.132
+        },
+        {
+          "upper_bound": null,
+          "rate": 0.132
+        }
+      ],
+      "tax_credit": 0.0,
+      "sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvBLwP76AcJRIL_Bo8Qg4lxPLDzmlyQ2MkS34Ah4xXnzhP6-gEp-OcLkVnsd2H5iTDA58FUZCnxoevO_tvjNTpPHMKn5QNA3gKCgoI7x_4synrSKB8drDCkXA24yla1kZAPXTouh44nbz4d0y0reivLrVMi2GLsXR0zfGa5OxgvRV--MsJ_-s=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfdqkI53za3QisRk52XA702ajRCi0xymp1RCvD-PPuhZ-8L_Uj_OSB7MTEMtR7qOsve2YIpnZa0ZXmHWGUsXSQmtCfIwLb_soBTnKayxN19TtErX4LQuioXoJQR69o_-wLcVFBM93Ca-56jx76C2JnY2dFmZ4ItMcnBI5S17bzvvuUKEYJ-3i9-DBuqPd9CChi3J6LvwMpRnrOhA=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-hw689cJKedzJ1L7mN0n6WSl3F21qKHihxBVJS058_XtQhwRf6R6vLvd79cp4M8iILkTefdmdPkc16Ye_8IPSrKeIRAE7tQhIzQlWcBwRL2a3I1x1L66izTQwIhHkTe9vgHw_pU4DWMzlKTn5LKf-AztwgsZR8rX4SVTkydj4gl32TY_GromL_2NXHMD08T_vhmNrVTv0vCpBF9xiKBh8oA="
+      ],
+      "notes": "The federal income tax in Switzerland is levied at a progressive rate. For single taxpayers, income up to CHF 15,200 is not subject to federal tax, effectively acting as a standard deduction. While the marginal rate for income between CHF 185,100 and CHF 793,900 is 13.20%, the overall effective federal tax rate is capped at 11.5% for taxable income above CHF 794,000. There is no simple, fixed-amount basic tax credit at the federal level for a single employee with no dependents; various deductions may apply but are not flat credits against tax liability."
+    },
+    "original_source": "web",
+    "saved_the": "2026-08-01T16:56:22+00:00"
+  },
+  "": {
+    "params": {
+      "country": "United States",
+      "year": 2026,
+      "currency": "USD",
+      "standard_deduction": 16100.0,
+      "tax_brackets": [
+        {
+          "upper_bound": 12400.0,
+          "rate": 0.1
+        },
+        {
+          "upper_bound": 50400.0,
+          "rate": 0.12
+        },
+        {
+          "upper_bound": 105700.0,
+          "rate": 0.22
+        },
+        {
+          "upper_bound": 201775.0,
+          "rate": 0.24
+        },
+        {
+          "upper_bound": 256225.0,
+          "rate": 0.32
+        },
+        {
+          "upper_bound": 640600.0,
+          "rate": 0.35
+        },
+        {
+          "upper_bound": null,
+          "rate": 0.37
+        }
+      ],
+      "tax_credit": 0.0,
+      "sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7XsAWPVJnm402c3uRdyG59WcHcaItxWyxlZ_12CU_YsbfUJ-jz8O6djO8LEtyjvg9Jx_LH_0e1JwMQME6yKFHFvtS05n9j-w5koFvt3f0d76IlP5sp5A13An7mbV8-OWIHiWWV5P0bWC1SeVqgoJzqBMOGHjYbsiwEzp0cc9RZYcQPXtVWZrC6PoFWffhQJtI36C6JpeEa08UgiC3dSab93YMwd9vyksRJ3jJj7fI4xooAnffJXHnvOhnw3-Rv9pgegQPxQM=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrYLOYJJsbIUer-61rbKREd5BeZ8hggSgbogKio-135mRbDqX6Dkze7eBJLFrqUDd_yIcQhJipc2okF_m8UDINvG6J10pWDoFwdJZh3ntszT2Jri8DG3OjENgLC7os7Tcqj8Efm2yi9Yfm77YLlyM5dZAQ1P7GuA3bZSk8N3LfIdXbAcksq9_GKt7P1vfUM3IZilOWiK7g4ZvaaNSh3yI19hsPVM8=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJFAtTMatJXYd4OmJA6mdyvMWsqP64G72VnReu1cVJeNkAmIJjJr5kHJ3jlETdvLP297yLQ7kfgWNFQbqEdbMgc7eCIgMHdtGDFvw9wO45W7zA_oCzgsH9H7uCT3qU8Okhckgz2-thesy4-SKa-i4QIbRA0yK9YwznGuFXvEhtL5qvgETsWuVuu5BXqpi-qGmZqb3zjP2HJQ5ZcnB2u75NpJaY0EE=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyZG0POVE-C7z3Gh-ReqQqa4uKjVhXdZEY_tjr1V7yola4Ht5fEuFf7VC3B8GCPAlhS4EjxsVd0hsdlAxtLRhbuJQrJCG9E5zC30iGltGkr-zzDX2YUn1rs0Hz8VOsGUBUnM2GOV4lNK2P5Hc8="
+      ],
+      "notes": "The country was assumed to be the United States as it was not specified in the prompt. Tax credits in the U.S. are generally complex, income-dependent, or have specific eligibility requirements (e.g., for dependents, education, or retirement savings), and thus a simple, fixed-amount basic tax credit applicable to all taxpayers could not be identified. Therefore, 'tax_credit' is set to 0 as per instructions."
+    },
+    "original_source": "web",
+    "saved_the": "2026-08-01T17:12:51+00:00"
+  },
+  "spain": {
+    "params": {
+      "country": "spain",
+      "year": 2025,
+      "currency": "EUR",
+      "standard_deduction": 0,
+      "tax_brackets": [
+        {
+          "upper_bound": 12450.0,
+          "rate": 0.095
+        },
+        {
+          "upper_bound": 20200.0,
+          "rate": 0.12
+        },
+        {
+          "upper_bound": 35200.0,
+          "rate": 0.15
+        },
+        {
+          "upper_bound": 60000.0,
+          "rate": 0.185
+        },
+        {
+          "upper_bound": 300000.0,
+          "rate": 0.225
+        },
+        {
+          "upper_bound": null,
+          "rate": 0.245
+        }
+      ],
+      "tax_credit": 0,
+      "sources": [
+        "Taxing Wages 2026 (OECD), spain chapter"
+      ],
+      "notes": "The document describes various allowances (e.g., work-related expenses, employment-related allowance, social security contributions) that reduce taxable income, but these are either variable or income-dependent, not a single fixed-amount standard deduction. The 'Personal and family exempt income' of EUR 5,550 is used to calculate a tax credit, not as a deduction before brackets. While the tables show a 'Basic credit' of EUR 1,035 for a single person with no children, the underlying tax equation for central government tax credits calculates a different amount (EUR 527.25) based on the exempt income and the tax schedule. Due to this discrepancy and the complexity of the credit calculation, a simple fixed tax credit cannot be confidently extracted as per instructions."
+    },
+    "original_source": "pdf",
+    "saved_the": "2026-08-01T18:03:22+00:00"
+  },
+  "portugal": {
+    "params": {
+      "country": "portugal",
+      "year": 2025,
+      "currency": "EUR",
+      "standard_deduction": 4462.15,
+      "tax_brackets": [
+        {
+          "upper_bound": 8059.0,
+          "rate": 0.125
+        },
+        {
+          "upper_bound": 12160.0,
+          "rate": 0.16
+        },
+        {
+          "upper_bound": 17233.0,
+          "rate": 0.215
+        },
+        {
+          "upper_bound": 22306.0,
+          "rate": 0.244
+        },
+        {
+          "upper_bound": 28400.0,
+          "rate": 0.314
+        },
+        {
+          "upper_bound": 41629.0,
+          "rate": 0.349
+        },
+        {
+          "upper_bound": 44987.0,
+          "rate": 0.431
+        },
+        {
+          "upper_bound": 80000.0,
+          "rate": 0.446
+        },
+        {
+          "upper_bound": 83696.0,
+          "rate": 0.471
+        },
+        {
+          "upper_bound": 250000.0,
+          "rate": 0.505
+        },
+        {
+          "upper_bound": null,
+          "rate": 0.53
+        }
+      ],
+      "tax_credit": 0.0,
+      "sources": [
+        "Taxing Wages 2026 (OECD), portugal chapter"
+      ],
+      "notes": "The tax rates include a solidarity surtax: 2.5% on taxable income between EUR 80,000 and EUR 250,000, and 5% on taxable income above EUR 250,000. The 'Amount to deduct (EUR) (K)' values from the document's tax rate schedule are part of the tax calculation formula and are not included in this raw bracket structure."
+    },
+    "original_source": "pdf",
+    "saved_the": "2026-08-01T18:05:26+00:00"
+  },
+  "france": {
+    "params": {
+      "country": "france",
+      "year": 2025,
+      "currency": "EUR",
+      "standard_deduction": 0.0,
+      "tax_brackets": [
+        {
+          "upper_bound": 11600.0,
+          "rate": 0.0
+        },
+        {
+          "upper_bound": 29579.0,
+          "rate": 0.11
+        },
+        {
+          "upper_bound": 84577.0,
+          "rate": 0.3
+        },
+        {
+          "upper_bound": 181917.0,
+          "rate": 0.41
+        },
+        {
+          "upper_bound": null,
+          "rate": 0.45
+        }
+      ],
+      "tax_credit": 0.0,
+      "sources": [
+        "Taxing Wages 2026 (OECD), france chapter"
+      ],
+      "notes": "The document describes deductions for social security contributions, a portion of CSG, and work-related expenses (10% of net pay with a minimum of EUR 509 and a ceiling of EUR 14 556) that are applied before calculating taxable income. These are not a single fixed standard deduction. The 'family quotient' system applies, but for a single person, the brackets apply directly to their taxable income (1 share). A special rebate for low tax liability is mentioned, but it is income-dependent and calculated as a percentage, not a fixed amount. Additional taxes on high revenues (Exceptional contribution on high revenues and Differential tax on high incomes) are also mentioned, but are separate from the main income tax schedule."
+    },
+    "original_source": "pdf",
+    "saved_the": "2026-08-02T13:21:20+00:00"
+  },
+  "bulgary": {
+    "params": {
+      "country": "bulgary",
+      "year": 2026,
+      "currency": "EUR",
+      "standard_deduction": 0.0,
+      "tax_brackets": [
+        {
+          "upper_bound": null,
+          "rate": 0.1
+        }
+      ],
+      "tax_credit": 0.0,
+      "sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9l8XAR1U8hdgUowkss2kCJjKeaNTKp7LX1LsFyAEjhm6YHTQIZZ_V9QilrE1GHNoW1dBNAy9s-BAOjSo-Wd25A4ZzsXbSfBgOzwGjC9ceZA0DJ4DlJnnjQbakupwikrQJRfzOpwk523chwmdSuAE8UWSAfwo=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGa4Aq-XtVium7VSKIEJz8XG7OIq9cqkUHVyllhSxU9RqvE-3ezttDI61prLt-Is3aTuwN9u3Uz27sresRJHkFOSdNU9xH8p62xCHk-kLYvTanhoirYivzMve2rXRJdhO46di7JlAV2znwBErw=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgnFZJkOzN6PPzHwQw3cLj6bEAYyf3ciHwzwh-TcVUqHsEtCxM1dWcsU5i9kZuS51c3Bnuzl_iONhRfLwO_Wak-2ZTVUMxFvaewQ0ZLxk5yg4BU_G0Rgy85IVcgIwvrR_aOCDH7G6RH2wTFa2SrYhagZjphJTFTYxVw573Srlf",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrsfco0OJHiU6d_rAh-HMyiXHfMganleiTnpi47TFQaKDYnCv6N8hKYtI_SQcPMD3GsFBo2vjBGBglja0lXOPNwSM5n1zdyrfoOsIJNoXzWmlVW6QbEI_v5wOX8-J9NStWwswxfPVXLZrd2PbJ8mBr__MF9HA=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1GXA67a8naZsUsoz38EN-jY6t9xbsffcuRcXRNY3-_xd8imDb1Xet9oAZW-R8Fph1dg4W9tgxzvTFCZwL0fcHX5R0scyiff_nCDJIK02Olrrwg0xIrbHqRwdcJdXohOAO-T7gLc74P4Wlf2fvjLyudijqkS9Tmx_SwlyUA_FaTNXnjjyoozZfl-sb4cg-WXajAhN2r4JMAQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZ7kIB-YNgxfCrTi-nUlTk4YA5HBRieRlL1Egt-hBZlZbSj8KKpIV2FoO8pq6Q4XsJPnjgWuiz1U9r7lIkbgdjrLk8cAsFzITCGCW1E_z8ndJSmO244twQsx8v0iubQ05rE_kcyij8B7ZMsXGoGItXqqOaFJTSuEz2VWXxR8nfISXh",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGSIV2YcJkjlvADJyScwtZCBeWL5z4D6de_IZICVAKjXjk3eDqwGPRDKcbZaScp-cGkyakrFVeFwNBhlxNMCQFPVssGAE4BQDQnsVzzzY68XceFf8qFZy4recq_kaE268Uag1lnWPYrqGv6OdQxgYmE03o=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEk_IE5w9dxB5peHV1VhW_qH7bhz-3FwfBVDDxSHP_V73sWhqA2zAR4S0IRahltloznwKsyIDSv-leGhgAZ_UxaoqX25N7JDcRcNJfrTUtKUZVfAiXCG2F1tCfbKo_pdHxLAYuC3JTxgSE=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExnp-KXWBSRPgzkdr0xr4kdX1yH11OsjWpzpUmd31hTHTX4E1ng1ey_FOvrIilVv52lxMDTKnUa4i2feuSpU1g2G77WzRdBjpxHtyONSOIWX-tIBH6c8ayNjLR3_HUkeW1y1iTKROruEDhaQPluJ040RdoXHxxClw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHn43OkvkfER9d8u1oSYkqvZho3M11fK0KkRAlIQsvuXWaApDtBphtYzJJMhExtwRUywaHLqfg73DoUSuU8KnL7AhXG40TdZRQBgJh8W_rdlNuhYBuNcwjTpytQmcQ4Vc1uJQanRG8IEHmeCQ27xHztaaic"
+      ],
+      "notes": "Bulgaria applies a flat 10% personal income tax rate. There is no basic tax-free allowance. While various tax reliefs exist (e.g., for children, disabilities, or certain expenses), they are either deductions from the taxable base, percentage-based, or have specific conditions, and thus do not qualify as a simple, fixed-amount basic tax credit. As of January 1, 2026, the Euro (EUR) replaces the Bulgarian Lev (BGN) as Bulgaria's official currency for tax and public liabilities."
+    },
+    "original_source": "web",
+    "saved_the": "2026-08-02T13:29:43+00:00"
+  },
+  "italy": {
+    "params": {
+      "country": "italy",
+      "year": 2025,
+      "currency": "EUR",
+      "standard_deduction": 8500.0,
+      "tax_brackets": [
+        {
+          "upper_bound": 28000.0,
+          "rate": 0.23
+        },
+        {
+          "upper_bound": 50000.0,
+          "rate": 0.35
+        },
+        {
+          "upper_bound": null,
+          "rate": 0.43
+        }
+      ],
+      "tax_credit": 0.0,
+      "sources": [
+        "Taxing Wages 2026 (OECD), italy chapter"
+      ],
+      "notes": "The 'de facto no-tax area' of EUR 8,500 is treated as a standard deduction. Multiple income-dependent tax credits exist but are not reported as a single fixed amount due to their complexity and varying conditions, as per instructions."
+    },
+    "original_source": "pdf",
+    "saved_the": "2026-08-02T14:51:05+00:00"
+  }
+}

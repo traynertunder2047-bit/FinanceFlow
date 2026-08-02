@@ -4,7 +4,7 @@ output/
 .vscode/
 .env
 
-# Python virtual enviroment and cache
+# Python virtual environment and cache
 .venv/
 __pycache__/
 *.pyc

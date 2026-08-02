@@ -4,7 +4,7 @@ from google import genai
 from google.genai import types
 
 
-def estrai_parametri_da_pdf(paese: str, testo_capitolo: str) -> dict:
+def extract_params_from_pdf(country: str, chapter_text: str) -> dict:
     """
     {
         "country": str,
@@ -12,7 +12,7 @@ def estrai_parametri_da_pdf(paese: str, testo_capitolo: str) -> dict:
         "currency": str,
         "standard_deduction": float,
         "tax_brackets": [{"upper_bound": float | None, "rate": float}, ...],
-        "tax_credit": float,   # 0 se assente/non affidabile come valore singolo
+        "tax_credit": float,   # 0 if absent/unreliable as a single value
         "sources": [str, ...],
         "notes": str
     }
@@ -20,18 +20,18 @@ def estrai_parametri_da_pdf(paese: str, testo_capitolo: str) -> dict:
     load_dotenv()
     API_KEY = os.environ.get("GEMINI_API_KEY")
     if not API_KEY:
-        raise RuntimeError("GEMINI_API_KEY non trovata nell'ambiente")
+        raise RuntimeError("GEMINI_API_KEY not found in the environment")
 
     client = genai.Client(api_key=API_KEY)
 
     prompt = f"""
-    Read the following document excerpt (Taxing Wages 2026, {paese} chapter)
+    Read the following document excerpt (Taxing Wages 2026, {country} chapter)
     and extract ONLY the raw personal income tax bracket structure
     (national/central government level) for a single employee with no
     dependents.
 
     DOCUMENT EXCERPT:
-    {testo_capitolo}
+    {chapter_text}
 
     IMPORTANT: You must NOT perform any tax calculation yourself. You must
     NOT apply the brackets to any salary. You must NOT sum, multiply, or
@@ -53,7 +53,7 @@ def estrai_parametri_da_pdf(paese: str, testo_capitolo: str) -> dict:
     explanation before or after) with EXACTLY this structure:
 
     {{
-      "country": "{paese}",
+      "country": "{country}",
       "year": <int, the tax year these brackets refer to, as stated in the document>,
       "currency": "<ISO currency code, e.g. EUR, USD>",
       "standard_deduction": <float, 0 if none found - a basic tax-free
@@ -64,7 +64,7 @@ def estrai_parametri_da_pdf(paese: str, testo_capitolo: str) -> dict:
       "tax_credit": <float, 0 if none found or too complex/uncertain to
          state as a single fixed number - a simple flat amount subtracted
          directly from the final tax liability>,
-      "sources": ["Taxing Wages 2026 (OECD), {paese} chapter"],
+      "sources": ["Taxing Wages 2026 (OECD), {country} chapter"],
       "notes": "<any important caveat, or empty string>"
     }}
 
@@ -73,19 +73,19 @@ def estrai_parametri_da_pdf(paese: str, testo_capitolo: str) -> dict:
     """
 
     response = client.models.generate_content(
-        model="gemini-3.5-flash",
+        model="gemini-2.5-flash",
         contents=[prompt],
         config=types.GenerateContentConfig(temperature=0),
     )
 
-    testo = response.text.strip()
-    testo_pulito = re.sub(r"^```(json)?|```$", "", testo, flags=re.MULTILINE).strip()
+    text = response.text.strip()
+    clean_text = re.sub(r"^```(json)?|```$", "", text, flags=re.MULTILINE).strip()
 
     try:
-        dati = json.loads(testo_pulito)
+        data = json.loads(clean_text)
     except json.JSONDecodeError as e:
         raise RuntimeError(
-            f"L'AI non ha restituito un JSON valido. Risposta grezza:\n{testo}"
+            f"The AI hasn't returned a valid JSON. Gross response:\n{text}"
         ) from e
 
-    return dati
+    return data
